@@ -1,21 +1,24 @@
-import Select, { Options } from 'react-select'
-import { useState } from "react";
-
-const fontOptions: Options<any> = [
-    { value: 'sans', label: 'Sans Serif'},
-    { value: 'serif', label: 'Serif'},
-    { value: 'mono', label: 'Mono'},
-];
+import Select from 'react-select'
+import { fontOptions, getFontOption, useFont } from "../../context/FontProvider";
+import './FontSwitcher.css';
 
 export const FontSwitcher = () => {
-    const [selectedOption, setSelectedOption] = useState<any>(fontOptions[0]);
+    const { font, setFont } = useFont();
+    const defaultValue = getFontOption(font);
+
+    const selectChange = (value: any) => {
+        setFont(value.value)
+    }
 
     return (
         <>
             <Select
-                defaultValue={selectedOption}
-                onChange={setSelectedOption}
+                unstyled={true}
+                classNamePrefix={'font-switcher'}
+                defaultValue={defaultValue}
+                onChange={selectChange}
                 options={fontOptions}
+                isSearchable={false}
             />
         </>
     );

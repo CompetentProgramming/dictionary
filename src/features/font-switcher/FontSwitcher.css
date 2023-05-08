@@ -1,0 +1,38 @@
+.font-switcher__control {
+    cursor: pointer !important;
+}
+.font-switcher__indicator svg {
+    color: var(--purple);
+}
+.font-switcher__indicator-separator {
+    margin: 0 6px;
+}
+.font-switcher__value-container {
+    font-weight: 700;
+}
+.font-switcher__menu {
+    width: 183px !important;
+    background: var(--white);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    right: 0;
+    transition-duration: .2s;
+    padding: 24px 24px 8px;
+}
+.dark .font-switcher__menu {
+    background: var(--light-dark);
+    box-shadow: 0px 5px 30px var(--purple);
+}
+.font-switcher__option {
+    transition-duration: .2s;
+    cursor: pointer !important;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+.font-switcher__option:hover,
+.font-switcher__option--is-selected {
+    color: var(--purple);
+}
+.font-switcher__input {
+    height: 24px !important;
+}
